@@ -1,0 +1,39 @@
+{
+  "name": "contactlist",
+  "version": "1.0.0",
+  "description": "GraphQL project to connect with Realm MongoDB Sync",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/josmanperez/ContactsRealmGraphQL.git"
+  },
+  "keywords": [
+    "graphql",
+    "mongodb",
+    "realm",
+    "sync"
+  ],
+  "author": "Josman Pérez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josmanperez/ContactsRealmGraphQL/issues"
+  },
+  "homepage": "https://github.com/josmanperez/ContactsRealmGraphQL#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.4.0",
+    "graphql-tools": "^7.0.2",
+    "mongoose": "^5.11.12",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
