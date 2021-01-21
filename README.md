@@ -1,8 +1,10 @@
 # Contact List GraphQL Server
 
-This project is aimed to provide an overview on how to connect you application with you own GraphQL server to resolve queries on your collections. 
+This project is aimed to provide an overview on how to connect your application with your own GraphQL server to resolve queries on your collections. 
 
 Realm Sync alredy offers a GraphQL API to interact with your data without creating your own custom GraphQL Server, but in this project we are going to build one just to the sake of learning. 
+
+This could also be good if you don't use Realm at all but you use MongoDB Atlas, because we are going to connect through MongoDB.
 
 # Schema
 
@@ -40,10 +42,19 @@ The Schema for the documents of that collection, is the following:
 
 ## For running the project
 
+### With Docker
+
 In order to be able to work with this project you will need to have `docker` installed on your system. In this project exists a 
 1. `docker-compose.yml`file that provides instrucctions on *how to build this container*
 2. `Dockerfile`with the instrucctions needed to run our own `nodejs`that is required to run this application
 3. Sustitute you values in the `.env.master`file and rename it to `.env`
+
+### Without docker
+
+You could also run this project without **docker**. You need to have `nodejs` and a package manager like `npn`. Just run this commands in the root folder of this project.
+
+1. `npm install`
+2. `nodemon index.js --exec babel-node -e js`
 
 ## For interact with the data
 
