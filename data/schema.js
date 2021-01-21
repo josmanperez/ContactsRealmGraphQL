@@ -52,10 +52,6 @@ const typeDefs = `
 
   enum ContactSortByInput {
     LASTNAME_DESC
-    _ID_ASC
-    _ID_DESC
-    _PARTITION_ASC
-    _PARTITION_DESC
     FIRSTNAME_ASC
     FIRSTNAME_DESC
     LASTNAME_ASC
@@ -64,9 +60,9 @@ const typeDefs = `
   scalar ObjectId
 
   type Query {
-    getContactBy(id: ID): Contact
-    contact(query: ContactQueryInput): Contact
-    contacts(query: ContactQueryInput, limit: Int = 100, sortBy: ContactSortByInput): [Contact]!
+    getContactById(id: ID): Contact
+    getContactByQuery(query: ContactQueryInput): Contact
+    getContacts(limit: Int = 100, sortBy: ContactSortByInput): [Contact]
   }
 `
 const schema = makeExecutableSchema({ typeDefs, resolvers });
