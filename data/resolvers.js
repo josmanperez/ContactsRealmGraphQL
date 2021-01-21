@@ -42,6 +42,37 @@ export const resolvers = {
         }).limit(limit).sort(sort);
       });
     }
+  },
+  Mutation: {
+    createContact: (root, {input}) => {
+      const newContact = new Contacts({
+        firstName: input.firstName,
+        lastName: input.lastName,
+      });
+      newContact.id = newContact._id;
+      newContact._partition = "contacts";
+      return new Promise((resolve, object) => {
+        newContact.save((err) => {
+          if (err) console.error(err);
+          else resolve(newContact);
+        });
+      });
+    },
+    updateContact: (root, {id, input}) => {
+      return new Promise((resolve, object) => {
+        Contacts.findOneAndUpdate({_id: id}, input, {new: true}, (err, friend) => {
+          if (err) console.error(err);
+          else resolve(friend);
+        });
+      });
+    },
+    deleteContact: (root, {id}) => {
+      return new Promise((resolve, object) => {
+        Contacts.remove({_id: id}, (err) => {
+          if (err) console.error(err);
+          else resolve("Succesfully delete a Contact");
+        });
+      });
+    }
   }
-
 };

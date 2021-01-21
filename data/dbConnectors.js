@@ -9,7 +9,8 @@ const uri = 'mongodb+srv://' + user + ':' + pass + '@' + endpoint + '/testSync?r
 mongoose.Promise = global.Promise;
 mongoose.connect(uri, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false
 });
 mongoose.connection.on('error', err => {
   console.error(`The was an error trying to connect to the database: ${err}`);

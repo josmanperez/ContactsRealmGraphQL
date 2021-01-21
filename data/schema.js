@@ -50,6 +50,11 @@ const typeDefs = `
     _id_ne: ObjectId
   }
 
+  input ContactInput {
+    firstName: String
+    lastName: String
+  }
+
   enum ContactSortByInput {
     LASTNAME_DESC
     FIRSTNAME_ASC
@@ -63,6 +68,12 @@ const typeDefs = `
     getContactById(id: ID): Contact
     getContactByQuery(query: ContactQueryInput): Contact
     getContacts(limit: Int = 100, sortBy: ContactSortByInput): [Contact]
+  }
+
+  type Mutation {
+    createContact(input: ContactInput): Contact 
+    updateContact(id: ID!, input: ContactInput): Contact
+    deleteContact(id: ID!): String
   }
 `
 const schema = makeExecutableSchema({ typeDefs, resolvers });
